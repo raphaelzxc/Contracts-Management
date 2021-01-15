@@ -1,0 +1,131 @@
+﻿@page
+@model ContractsManagement.Pages.MiningContract.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if ((string)TempData["Referrer"] == "SaveRegister")
+{
+    <div class="alert alert-success">
+        <strong>You have Created New Contracts successfully</strong>
+    </div>
+}
+
+@if ((string)TempData["Referrers"] == "Edited")
+{
+    <div class="alert alert-success">
+        <strong>You have Edited successfully</strong>
+    </div>
+}
+
+
+<h2 class="text-center"><i class="ion ion-person-add"></i>Mining Contracts</h2>
+
+
+
+
+<form>
+ Contractors Name:
+<input type="text" name="SearchString">
+<input type="submit" value="Search" class="btn btn-primary" />
+</form>
+
+
+
+<form method="post" asp-page-handler="ExportExcel" style="float: right;">
+    <button class="btn btn-success btn-secondary order-button ">ExportExcel</button>
+</form>
+
+
+<table class="table" id="employeeTable">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="Create" class="btn btn-success text-white"><i class="fas fa-random"></i>Create New</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiningContracts[0].ContractorsName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.MiningContracts[0].TypeofContract)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.MiningContracts[0].Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiningContracts[0].Finish)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.MiningContracts[0].Provisions)
+            </th>
+
+
+
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MiningContracts)
+        {
+            <tr>
+                <td>
+
+                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary text-white">Edit  </a>
+                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-primary text-white">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-danger text-white">Delete</a>
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContractorsName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeofContract)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Finish)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Provisions)
+                </td>
+
+
+
+               
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{ 
+
+<script src"https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+<script>
+    function activateJqueryTable() {
+        $("#employeeTable").DataTable();
+    }
+
+    $(function() {
+        activateJqueryTable();
+    });
+
+</script>
+
+}

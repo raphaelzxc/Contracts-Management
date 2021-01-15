@@ -1,0 +1,120 @@
+﻿@page
+@model ContractsManagement.Pages.MiningContract.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MiningContracts</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.ContractorsName" class="control-label"></label>
+                <input asp-for="MiningContracts.ContractorsName" class="form-control" />
+                <span asp-validation-for="MiningContracts.ContractorsName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.ReferenceNumber" class="control-label"></label>
+                <input asp-for="MiningContracts.ReferenceNumber" class="form-control" />
+                <span asp-validation-for="MiningContracts.ReferenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Amendment_Supplement" class="control-label"></label>
+                <input asp-for="MiningContracts.Amendment_Supplement" class="form-control" />
+                <span asp-validation-for="MiningContracts.Amendment_Supplement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.TypeofContract" class="control-label"></label>
+                <input asp-for="MiningContracts.TypeofContract" class="form-control" />
+                <span asp-validation-for="MiningContracts.TypeofContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.DocumentStatus" class="control-label"></label>
+                <input asp-for="MiningContracts.DocumentStatus" class="form-control" />
+                <span asp-validation-for="MiningContracts.DocumentStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Name" class="control-label"></label>
+                <input asp-for="MiningContracts.Name" class="form-control" />
+                <span asp-validation-for="MiningContracts.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Addresss" class="control-label"></label>
+                <input asp-for="MiningContracts.Addresss" class="form-control" />
+                <span asp-validation-for="MiningContracts.Addresss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Accreditation" class="control-label"></label>
+                <input asp-for="MiningContracts.Accreditation" class="form-control" />
+                <span asp-validation-for="MiningContracts.Accreditation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Start" class="control-label"></label>
+                <input asp-for="MiningContracts.Start" class="form-control" />
+                <span asp-validation-for="MiningContracts.Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Finish" class="control-label"></label>
+                <input asp-for="MiningContracts.Finish" class="form-control" />
+                <span asp-validation-for="MiningContracts.Finish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.PaymentTerms" class="control-label"></label>
+                <input asp-for="MiningContracts.PaymentTerms" class="form-control" />
+                <span asp-validation-for="MiningContracts.PaymentTerms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Scope" class="control-label"></label>
+                <input asp-for="MiningContracts.Scope" class="form-control" />
+                <span asp-validation-for="MiningContracts.Scope" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Rates" class="control-label"></label>
+                <input asp-for="MiningContracts.Rates" class="form-control" />
+                <span asp-validation-for="MiningContracts.Rates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Provisions" class="control-label"></label>
+                <input asp-for="MiningContracts.Provisions" class="form-control" />
+                <span asp-validation-for="MiningContracts.Provisions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.WorkProgress" class="control-label"></label>
+                <input asp-for="MiningContracts.WorkProgress" class="form-control" />
+                <span asp-validation-for="MiningContracts.WorkProgress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Comments" class="control-label"></label>
+                <input asp-for="MiningContracts.Comments" class="form-control" />
+                <span asp-validation-for="MiningContracts.Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Recommendation" class="control-label"></label>
+                <input asp-for="MiningContracts.Recommendation" class="form-control" />
+                <span asp-validation-for="MiningContracts.Recommendation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiningContracts.Owner" class="control-label"></label>
+                <input asp-for="MiningContracts.Owner" class="form-control" />
+                <span asp-validation-for="MiningContracts.Owner" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
